@@ -1,8 +1,9 @@
 <template>
-    <header>
+    <header style = "border: 1px solid black">
         <h1> {{abd}} </h1>
         <Button 
-        @toggle-add-task="$emit('toggle-add-task')" 
+        v-show="homePage"
+        @toggle-add-task="printPass()" 
         :text="showAddTask ? 'Close' : 'Add Task'" 
         :color="showAddTask ? 'red' : 'green'" 
         />
@@ -21,6 +22,15 @@ export default {
     components: {
         Button
     },
+    computed: {
+        homePage() {
+            if (this.$route.path === '/') {
+                return true
+            } else {
+                return false
+            }
+        }
+    }
 }
 </script>
 
