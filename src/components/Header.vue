@@ -3,7 +3,7 @@
         <h1> {{abd}} </h1>
         <Button 
         v-show="homePage"
-        @toggle-add-task="printPass()" 
+        @toggle-add-task="$emit('toggle-add-task')" 
         :text="showAddTask ? 'Close' : 'Add Task'" 
         :color="showAddTask ? 'red' : 'green'" 
         />

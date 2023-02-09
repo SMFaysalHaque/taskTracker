@@ -1,6 +1,8 @@
-import {createRouter, createWebHashHistory} from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 import Home from '../views/Home'
 import About from '../views/About'
+import Cart from '../views/cart'
+
 
 
 const routes = [
@@ -10,14 +12,19 @@ const routes = [
         component: Home,
     },
     {
-        path: '/',
+        path: '/about',
         name: 'About',
         component: About,
+    },
+    {
+        path: '/cart',
+        name: 'Cart',
+        component: Cart, 
     }
 ]
 
 const router = createRouter({
-    history: createWebHashHistory(process.env.BASE_URL),
+    history: createWebHistory(),
     routes
 })
 
